@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="register-page.css">
+    <title>register-page</title>
+</head>
+<body>
+    <div id="main">    
+        <form id="registerform" onsubmit= "return validate();" action="register-page.jsp" method="post" name="register_form">
+            <div id="background">   
+                <div id="Logo">
+                <h1>Daily</h1>
+                </div> 
+                <div id="blankbox">
+                    <div>
+                        <input type="text" placeholder="이름" name="register_username" class="blank" id="username">
+                    </div>
+                    <div>
+                        <input type="text" placeholder="아이디" name="register_id" class="blank" id="Id">
+                    </div>    
+                    <div>    
+                        <input type="password" placeholder="비밀번호" name="register_password" class="blank" id="password">
+                    </div>
+                    <div>    
+                        <input type="password" placeholder="비밀번호 확인" name="check_password" class="blank" id="password2">
+                    </div>
+                    <div> 
+                        <input type="submit" value="가입하기" name="register_button" class="button">
+                        <a href="login-page.html" id="back">뒤로가기</a>
+                    </div>    
+            </div>    
+        </form>
+    </div>
+    <script>
+        var nickname = /^[가-힣]+$/
+        var identify = /^[0-9a-z]+$/;
+        var secret = /(?=.*\d{1,50})(?=.*[~`!@#$%\^&*()-+=]{1,50})(?=.*[a-zA-Z]{2,50}).{8,50}$/;
+
+        var username = document.register_form.register_username;
+        var id = document.register_form.register_id;
+        var password = document.register_form.register_password;
+        var repassword = document.register_form.check_password;
+            
+        function validate()
+        {
+            if ( !nickname.test(username.value) )
+            {
+                alert("한국어를 입력하세요 필수 정보입니다");
+                username.focus(); 
+                return false;
+            }
+            if ( username.value =="" || username.value == null)
+            {
+                alert("이름을 입력하세요 필수 정보입니다");
+                username.focus(); 
+                return false;
+            }
+            if ( !identify.test(id.value) || id.value =="" || id.value == null)
+            {
+                alert("아이디를 입력하세요 필수 정보입니다");
+                id.focus(); 
+                return false;
+            }
+            if ( password.value =="" || password.value == null)
+            {
+                alert("비밀번호를 입력하세요 필수 정보입니다");
+                password.focus(); 
+                return false;
+            }
+            if ( !secret.test(password.value) )
+            {
+                alert("숫자, 특문 각 1회 이상, 영문은 2개 이상 사용하여 8자리 이상 입력하세요")
+                password.focus(); 
+                return false;
+            }
+            if( password.value !=repassword.value ) 
+            {
+                alert("비밀번호가 일치 하지 않습니다")
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

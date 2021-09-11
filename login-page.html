@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="login-page.css">
+    <title>login-page</title>
+</head>
+<body>
+    <div id="main">
+        <form id="Loginform" action="login-page.jsp" method="post" name="loginform" onsubmit="return validate();">
+            <div id="background">    
+                <div id="Logo">   
+                    <h1>Daily</h1>
+                </div>
+                <div id="inputform">
+                    <div>
+                        <input type="text" name="login_id" class="blank" placeholder="아이디" maxlength="">
+                    </div>   
+                    <div>
+                        <input type="password" name="login_password"  id="loginpassword" class="blank" placeholder="비밀번호" maxlength="">
+                    </div>
+                    <div>
+                        <input type="button" id="showPassword" value="비밀번호 표시">
+                    </div>
+                </div>
+                <div id="buttons">
+                    <input type="submit" value="로그인" name="login_button" id="loginbutton">
+                    <a href="register-page.html" id="registerbutton">회원가입</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+
+    function validate() {
+        var id = document.loginform.login_id;
+        var password = document.loginform.login_password;
+
+        if (id.value == null || id.value =="")
+        {
+            window.alert("아이디를 입력하세요");
+            id.focus(); 
+            return false;
+        }
+        if(password.value == null || password.value =="")
+        {
+            window.alert("비밀번호를 입력하세요");
+            password.focus();
+            return false;   
+        }
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+
+#main
+{
+    background-color: black;
+    display: flex;
+    vertical-align: middle; 
+    align-items: center;
+    justify-content: center;
+}
+#Loginform
+{
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    background-color: #7a7878; 
+    width: 600px;
+    margin-top: 30px;
+    font: bold 14px;    
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    margin-top: 20px;
+    border-radius: 20%;
+}
+#background
+{   
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 100%px;
+    box-sizing: border-box;
+    background-color: black;
+    margin-bottom: 35px;
+    border-radius: 20%;
+    margin-top: 35px;
+}
+h1
+{
+    display: inline-block;
+    box-sizing: border-box;
+    font-style: italic;
+    color: burlywood;
+}
+#inputform
+{
+    display: flex;
+    flex-direction: column;
+}
+#loginbutton
+{
+    width: 80px;
+    height: 30px;
+    float: right;
+    background-color: black;
+    margin-right: 20px;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+.blank{
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#registerbutton
+{  
+    float: left;
+    text-decoration: none;
+    border: solid;
+    border-color: #ffffff;
+    color: white;
+    background-color: black;
+    margin-left: 20px;
+    border-radius: 12%;
+}
+#buttons{
+    margin-top: 100px;
+}
+#showPassword{
+    vertical-align: baseline;
+    margin-left: 100px;
+}
+#inputform{
+    margin-top: 30px;
+}
